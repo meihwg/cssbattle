@@ -60,7 +60,10 @@ function run(code) {
         .replaceAll(' /','/')
         .replaceAll(';}','}')
         .replace('</style>', '')
-        .replaceAll('% ', '%');
+        .replaceAll('% ', '%')
+        .replace(/ #/g, '#')
+        .replace(/color:#/gi, 'color:')
+        .replace(/;$/, '');
 
     return code;
 }
